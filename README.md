@@ -12,4 +12,10 @@ sdk env isntall
 export GRAALVM_HOME=$JAVA_HOME
 ```
 
+## Building
 
+```
+mvn clean -Pnative -DskipTests package
+```
+
+then you can run `target/scraper 10` for example.
