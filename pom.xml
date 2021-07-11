@@ -23,6 +23,12 @@
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
+        <dependency>
+            <groupId>org.conscrypt</groupId>
+            <artifactId>conscrypt-openjdk</artifactId>
+            <version>2.5.2</version>
+            <classifier>${os.detected.classifier}</classifier>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -55,6 +61,8 @@
                             <imageName>${imageName}</imageName>
                             <buildArgs>
                                 <buildArg>--no-fallback</buildArg>
+                                <buildArg>-H:+AddAllCharsets</buildArg>
+                                <buildArg>--enable-url-protocols=http</buildArg>
                             </buildArgs>
                         </configuration>
                     </plugin>
@@ -65,6 +73,13 @@
 
     <build>
         <finalName>${project.artifactId}</finalName>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.4.1.Final</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

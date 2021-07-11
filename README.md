@@ -1,18 +1,20 @@
 # scraper
 
-Experiment with [Selenium](https://www.selenium.dev/), 
-[GraalVM](https://www.graalvm.org/) and 
-[Native Image Maven Plugin](https://github.com/graalvm/native-build-tools/blob/master/native-maven-plugin/README.md). 
+POC that [GraalVM](https://www.graalvm.org/) can work with [Selenium](https://www.selenium.dev/).
+[Native Image Maven Plugin](https://github.com/graalvm/native-build-tools/blob/master/native-maven-plugin/README.md)
+is used.
 
 
-## Environment setup with SDKMAN!
+## Environment setup
+
+###SDKMAN!
 
 ```
 sdk env isntall
 export GRAALVM_HOME=$JAVA_HOME
 ```
 
-## Firefox setup
+### Firefox
 ```
 brew install --cask firefox
 brew install geckodriver
@@ -20,9 +22,14 @@ brew install geckodriver
 
 
 ## Building
-
 ```
 mvn clean -Pnative -DskipTests package
 ```
+then you can run `target/scraper`. 
+Firefox will be started, however you must accept some google policy,
+but the idea of running selenium from GraalVM native image looks promising. 
 
-then you can run `target/scraper 10` for example.
+
+## related issues
+- https://github.com/sdkman/sdkman-cli/issues/838
+- https://github.com/oracle/graal/issues/1294
