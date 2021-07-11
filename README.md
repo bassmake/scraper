@@ -12,6 +12,13 @@ sdk env isntall
 export GRAALVM_HOME=$JAVA_HOME
 ```
 
+## Firefox setup
+```
+brew install --cask firefox
+brew install geckodriver
+```
+
+
 ## Building
 
 ```

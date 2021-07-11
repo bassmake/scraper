@@ -17,6 +17,14 @@
         <mainClass>sk.bsmk.scraper.Main</mainClass>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+    </dependencies>
+
     <profiles>
         <profile>
             <id>native</id>
