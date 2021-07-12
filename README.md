@@ -7,7 +7,7 @@ is used.
 
 ## Environment setup
 
-###SDKMAN!
+### SDKMAN!
 
 ```
 sdk env isntall
